@@ -23,8 +23,8 @@ function CarForm() {
         event.preventDefault();
 
         dispatch(addCar({ name: name, cost: cost }));
-        dispatch(changeCost(0));
-        dispatch(changeName(""));
+        // dispatch(changeCost(0));
+        // dispatch(changeName(""));
     }
 
 
