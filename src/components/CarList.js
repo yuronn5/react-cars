@@ -4,8 +4,10 @@ import { removeCar } from "../store";
 function CarList() {
     const dispatch = useDispatch();
 
-    const cars = useSelector((state) => {
-        return state.cars.data;
+    const cars = useSelector(({ cars: { data, searchTerm } }) => {
+        //filtering logic start
+        return data.filter((car) => car.name.toLowerCase().includes(searchTerm.toLowerCase()));
+        //filtering logic end
     });
 
     const handleCarDelete = (car) => [
